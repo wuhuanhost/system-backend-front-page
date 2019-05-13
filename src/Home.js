@@ -1,6 +1,6 @@
 import { Layout, Menu, Icon } from "antd";
 import React from "react";
-import "./Home.scss";
+import "./style/Home.scss";
 import ADD from "./containers/ADD";
 import ToDo from "./containers/TodoList";
 const { Header, Sider, Content } = Layout;
