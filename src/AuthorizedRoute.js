@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-05 14:39:32
- * @LastEditTime: 2019-06-05 17:22:51
+ * @LastEditTime: 2019-06-05 17:25:19
  * @LastEditors: Please set LastEditors
  */
 
@@ -33,6 +33,7 @@ class AuthorizedRoute extends React.Component {
     }
 }
 
+// 将属性读取到props中
 const mapStateToProps = state => ({
     logged: state.user.isLogin
 });
