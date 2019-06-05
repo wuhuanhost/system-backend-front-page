@@ -42,7 +42,7 @@ class AppLayout extends React.Component {
                 <Layout id="components-layout-demo-custom-trigger">
                     <Sider trigger={null} collapsible collapsed={this.state.collapsed ? 1 : 0} width={256} collapsedWidth={80}>
                         <div className="logo" />
-                        <Menu mode="inline" theme="dark" defaultOpenKeys={["sub1"]} defaultSelectedKeys={["1"]} onOpenChange={this.onOpenChange}>
+                        <Menu mode="inline" theme="dark" defaultOpenKeys={["sub1"]} defaultSelectedKeys={["1"]} openKeys={this.state.openKeys} onOpenChange={this.onOpenChange}>
                             <SubMenu
                                 collapsed={this.state.collapsed ? 1 : 0}
                                 key="sub1"
