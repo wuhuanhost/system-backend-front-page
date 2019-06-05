@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-05 14:39:32
- * @LastEditTime: 2019-06-05 17:25:19
+ * @LastEditTime: 2019-06-05 17:42:19
  * @LastEditors: Please set LastEditors
  */
 
@@ -21,7 +21,7 @@ class AuthorizedRoute extends React.Component {
 
     render() {
         const { component: Component, logged, ...rest } = this.props;
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <Route
                 {...rest}

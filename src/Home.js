@@ -4,7 +4,7 @@ import Login from "./page/Login";
 import NotFound from "./page/404";
 import AppLayout from "./page/Layout";
 import AuthorizedRoute from "./AuthorizedRoute.js";
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 class AppRoot extends React.Component {
     render() {

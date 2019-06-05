@@ -9,10 +9,15 @@ const { Header, Sider, Content } = Layout;
 class AppLayout extends React.Component {
     rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
-    state = {
-        openKeys: ["sub1"],
-        collapsed: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            openKeys: ["sub1"],
+            collapsed: false
+        };
+
+        this.onOpenChange = this.onOpenChange.bind(this);
+    }
 
     onOpenChange = openKeys => {
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
