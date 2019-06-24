@@ -13,6 +13,7 @@ class AppLayout extends React.Component {
         super(props);
         this.state = {
             openKeys: ["sub1"],
+            _openKeys: ["sub1"],
             collapsed: false
         };
 
@@ -20,6 +21,7 @@ class AppLayout extends React.Component {
     }
 
     onOpenChange = openKeys => {
+        console.log(11);
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
         if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
             this.setState({ openKeys });
@@ -29,8 +31,39 @@ class AppLayout extends React.Component {
             });
         }
     };
+    onOpenChange1 = obj => {
+        let openKeys = obj.keyPath;
+        const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+        if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+            this.setState({ openKeys });
+            if (openKeys.length >= 1) {
+                this.setState({ _openKeys: openKeys });
+            }
+        } else {
+            this.setState({
+                openKeys: latestOpenKey ? [latestOpenKey] : []
+            });
+            this.setState({
+                _openKeys: latestOpenKey ? [latestOpenKey] : []
+            });
+        }
+        if (this.state.collapsed) {
+            this.setState({
+                openKeys: []
+            });
+        }
+    };
 
     toggle = () => {
+        if (!this.state.collapsed) {
+            this.setState({
+                openKeys: []
+            });
+        } else {
+            this.setState({
+                openKeys: this.state._openKeys
+            });
+        }
         this.setState({
             collapsed: !this.state.collapsed
         });
@@ -42,9 +75,17 @@ class AppLayout extends React.Component {
                 <Layout id="components-layout-demo-custom-trigger">
                     <Sider trigger={null} collapsible collapsed={this.state.collapsed ? 1 : 0} width={256} collapsedWidth={80}>
                         <div className="logo" />
-                        <Menu mode="inline" theme="dark" defaultOpenKeys={["sub1"]} defaultSelectedKeys={["1"]} openKeys={this.state.openKeys} onOpenChange={this.onOpenChange}>
+                        <Menu
+                            mode="inline"
+                            theme="dark"
+                            defaultOpenKeys={["sub1"]}
+                            defaultSelectedKeys={["1"]}
+                            openKeys={this.state.openKeys}
+                            onClick={this.onOpenChange1}
+                            onOpenChange={this.onOpenChange}
+                            // inlineCollapsed={this.state.collapsed}
+                        >
                             <SubMenu
-                                collapsed={this.state.collapsed ? 1 : 0}
                                 key="sub1"
                                 title={
                                     <span>

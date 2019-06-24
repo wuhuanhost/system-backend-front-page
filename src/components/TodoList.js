@@ -4,7 +4,7 @@ import Todo from "./Todo";
 import "./TodoList.scss";
 
 const TodoList = ({ todos, toggleTodo }) => (
-    <ul class="todo-view">
+    <ul className="todo-view">
         {todos.map(todo => (
             <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
         ))}
