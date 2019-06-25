@@ -10,10 +10,38 @@
     color: #1890ff;
 }
 
+.ant-menu {
+    padding-top: 16px !important;
+}
+
 #components-layout-demo-custom-trigger .logo {
+    position: relative;
+    height: 64px;
+    padding-left: 24px;
+    overflow: hidden;
+    line-height: 64px;
+    background: #001529;
+    transition: all 0.3s;
+    // background-image: url("https://gw.alipayobjects.com/zos/rmsportal/tNoOLUAkyuGLXoZvaibF.svg");
+    // background-size: 100%;
+    // background-repeat: no-repeat;
+    // background-position: center;
+}
+
+#components-layout-demo-custom-trigger .logo img {
+    display: inline-block;
     height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
+    vertical-align: middle;
+}
+
+#components-layout-demo-custom-trigger .logo h1 {
+    display: inline-block;
+    margin: 0 0 0 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
 }
 
 .ant-layout-sider {
