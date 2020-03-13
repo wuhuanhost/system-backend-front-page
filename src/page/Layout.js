@@ -1,4 +1,6 @@
-import { Layout, Menu, Icon } from "antd";
+import { ControlFilled, DashboardFilled, PieChartFilled } from '@ant-design/icons';
+import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { Layout, Menu } from "antd";
 import React from "react";
 import "../style/Home.scss";
 import ADD from "../containers/ADD";
@@ -112,7 +114,7 @@ class AppLayout extends React.Component {
                 key="sub1"
                 title={
                   <span>
-                    <Icon type="dashboard" theme="filled" />
+                    <DashboardFilled />
                     <span>仪表盘</span>
                   </span>
                 }
@@ -130,7 +132,7 @@ class AppLayout extends React.Component {
                 key="sub2"
                 title={
                   <span>
-                    <Icon type="control" theme="filled" />
+                    <ControlFilled />
                     <span>系统管理</span>
                   </span>
                 }
@@ -144,7 +146,7 @@ class AppLayout extends React.Component {
                 key="sub4"
                 title={
                   <span>
-                    <Icon type="pie-chart" theme="filled" />
+                    <PieChartFilled />
                     <span>报表</span>
                   </span>
                 }
@@ -159,7 +161,7 @@ class AppLayout extends React.Component {
 
           <Layout>
             <Header style={{ background: "#fff", padding: 0 }}>
-              <Icon
+              <LegacyIcon
                 className="trigger"
                 type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
                 onClick={this.toggle}

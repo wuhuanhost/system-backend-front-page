@@ -1,7 +1,10 @@
 import React from "react";
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
 // import "./Login.css";
 // import { login } from "../../mock/mock";
-import { Form, Icon, Input, Button } from "antd";
+import { Input, Button } from "antd";
 import { userLogin } from "../actions";
 import { connect } from "react-redux";
 const FormItem = Form.Item;
@@ -42,10 +45,10 @@ class Login extends React.Component {
             <div style={{ width: "600px", margin: "40px auto" }}>
                 <Form className="login-form">
                     <FormItem>
-                        <Input prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />} placeholder="用户名" onChange={this.handleChangeUserName} />
+                        <Input prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />} placeholder="用户名" onChange={this.handleChangeUserName} />
                     </FormItem>
                     <FormItem>
-                        <Input type="password" prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />} placeholder="密码" onChange={this.handleChangeUserPassword} />
+                        <Input type="password" prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />} placeholder="密码" onChange={this.handleChangeUserPassword} />
                     </FormItem>
                     <Button type="primary" onClick={this.handleSubmit}>
                         登录
